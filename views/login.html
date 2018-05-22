@@ -12,7 +12,91 @@
 </head>
 <body>
     <div class="container">
-    	
+    	<div class="date">
+    		<div class="date-l">
+    			<i><img src="../images/icon1.png" alt=""></i>
+    			<div class="time">
+    				<span>2018.05.15</span>
+    				<span>周二</span>
+    				<span>10:40</span>
+    			</div>
+    		</div>
+    		<div class="exit"><img src="../images/icon2.png" alt=""></div>
+    	</div>
+    	<div class="logo"><img src="../images/logo.png" alt=""></div>
+    	<div class="login-container">
+    		<div class="login-l"><img src="../images/text.png" alt=""></div>
+	    	<div class="login">
+	    		<div class="t"><img src="../images/text_top.png" alt=""></div>
+	    		<div class="b">
+	    			<div class="user item">
+	    				<i><img src="../images/icon3.png" alt=""></i>
+	    				<div class="inp"><input type="text" placeholder="用户名"></div>
+	    			</div>
+	    			<div class="password item">
+	    				<i><img src="../images/icon4.png" alt=""></i>
+	    				<div class="inp"><input type="password" placeholder="密码"></div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="login-r">
+	    		<h5>登 录</h5>
+	    		<h6>LOGIN</h6>
+	    	</div>
+    	</div>
+    	<div class="list">
+    		<a href="" class="items">
+    			<div class="img"><i class="i1"></i></div>
+    			<div class="text">
+    				<p>CRM</p>
+    				<p>销售系统</p>
+    			</div>
+    		</a>
+    		<a href="" class="items">
+    			<div class="img"><i class="i2"></i></div>
+    			<div class="text">
+    				<p>CMS</p>
+    				<p>内容管理系统</p>
+    			</div>
+    		</a>
+    		<a href="" class="items">
+    			<div class="img"><i class="i3"></i></div>
+    			<div class="text">
+    				<p>加盟商</p>
+    				<p>结算系统</p>
+    			</div>
+    		</a>
+    		<a href="" class="items">
+    			<div class="img"><i class="i4"></i></div>
+    			<div class="text">
+    				<p>采购系统</p>
+    			</div>
+    		</a>
+    		<a href="" class="items">
+    			<div class="img"><i class="i5"></i></div>
+    			<div class="text">
+    				<p>OA办公系统</p>
+    			</div>
+    		</a>
+    		<a href="" class="items">
+    			<div class="img"><i class="i6"></i></div>
+    			<div class="text">
+    				<p>酒店生命周期</p>
+    				<p>系统</p>
+    			</div>
+    		</a>
+    	</div>
+    	<div class="footer">
+    		<div class="line"></div>
+    		<p>©1999 - 2018 雅斯特酒店集团版权所有, Inc or its affiliates. All Rights Reserved. 粤ICP备17011619号</p>
+    	</div>
 	</div>
-	<script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+	<script src="../plugins/jquery/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".list .items").on("hover",function(){
+				$(this).addClass("on");
+			})
+		});
+	</script>
 </html>
