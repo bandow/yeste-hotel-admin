@@ -77,7 +77,7 @@ html {
 }
 
 html, body {
-  font-family: Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   /*-webkit-user-select:none禁止用户进行复制.选择.*/
   width: 100%;
   /*使用min-height:100%代替height：100%*/
@@ -182,7 +182,52 @@ body {
 }
 
 .container .date {
-  margin-right: 30px;
+  margin: 0 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .date .l {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 5px;
+}
+
+.container .date .l i {
+  font-size: 0;
+}
+
+.container .date .l i:nth-child(2) {
+  margin-left: 30px;
+}
+
+.container .date .l p {
+  margin-left: 30px;
+  font: 30px/1 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
+.container .date .r {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,7 +242,7 @@ body {
           justify-content: flex-end;
 }
 
-.container .date .date-l {
+.container .date .r .date-l {
   padding-top: 10px;
   margin-right: 20px;
   display: -webkit-box;
@@ -210,17 +255,17 @@ body {
           align-items: center;
 }
 
-.container .date .date-l i {
+.container .date .r .date-l i {
   font-size: 0;
 }
 
-.container .date .date-l .time span {
+.container .date .r .date-l .time {
   padding-left: 10px;
-  font: 18px/1.5 Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font: 18px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fff;
 }
 
-.container .date .exit {
+.container .date .r .exit {
   width: 40px;
   height: 52px;
   background: rgba(255, 255, 255, 0.4);
@@ -239,8 +284,8 @@ body {
   cursor: pointer;
 }
 
-.container .date .exit img {
-  padding-top: 10px;
+.container .date .r .exit img {
+  padding-top: 12px;
 }
 
 .container .logo {
@@ -328,6 +373,11 @@ body {
   color: #58595b;
 }
 
+.login-container .login .b .item .inp.on {
+  -webkit-box-shadow: 0 2px 0 rgba(159, 46, 64, 0.15);
+          box-shadow: 0 2px 0 rgba(159, 46, 64, 0.15);
+}
+
 .login-container .login-r {
   position: absolute;
   left: calc(50% + 710px/2);
@@ -360,12 +410,12 @@ body {
 }
 
 .login-container .login-r h5 {
-  font: 24px/1.5 Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font: 24px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fff;
 }
 
 .login-container .login-r h6 {
-  font: 14px/1.5 Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fff;
 }
 
@@ -387,13 +437,29 @@ body {
 }
 
 .list .items {
+  position: relative;
   width: 90px;
   margin: 0 18px;
+}
+
+.list .items .line1, .list .items .line2 {
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  opacity: .5;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 
 .list .items .img {
   width: 90px;
   height: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.4);
   display: -webkit-box;
   display: -webkit-flex;
@@ -446,8 +512,32 @@ body {
 }
 
 .list .items .text p {
-  font: 14px/1.2 Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font: 14px/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fff;
+}
+
+.list .items:hover .line1 {
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: scale(1.2, 1.1) translateY(-4px);
+      -ms-transform: scale(1.2, 1.1) translateY(-4px);
+          transform: scale(1.2, 1.1) translateY(-4px);
+  opacity: 1;
+}
+
+.list .items:hover .line2 {
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: scale(1.4, 1.2) translateY(-6px);
+      -ms-transform: scale(1.4, 1.2) translateY(-6px);
+          transform: scale(1.4, 1.2) translateY(-6px);
+  opacity: .5;
 }
 
 .list .items:hover .img i.i1 {
@@ -487,6 +577,345 @@ body {
 }
 
 .footer p {
-  font: 13px/1.2 Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font: 13px/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #58595b;
+}
+
+.swiper-container {
+  margin-top: 50px;
+}
+
+.system-prev, .system-next {
+  width: 80px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.4);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1 !important;
+}
+
+.system-prev i, .system-next i {
+  display: block;
+  width: 25px;
+  height: 21px;
+  background: url(../../images/prev_next.png) no-repeat;
+}
+
+.system-prev {
+  left: 0;
+}
+
+.system-prev i {
+  background-position: 0 -21px;
+}
+
+.swiper-button-prev.swiper-button-disabled i {
+  background-position: 0 0;
+}
+
+.system-next {
+  right: 0;
+}
+
+.system-next i {
+  background-position: -25px -21px;
+}
+
+.swiper-button-next.swiper-button-disabled i {
+  background-position: -25px 0;
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.system-l {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.system-l .user-info {
+  margin-left: 100px;
+  width: 353px;
+  height: 527px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.system-l .system-list .system-list-big {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 838px;
+}
+
+.system-l .system-list .system-list-big .item {
+  margin-left: 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 311px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.system-l .system-list .system-list-small {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 838px;
+}
+
+.system-l .system-list .system-list-small .item {
+  margin-left: 10px;
+  margin-top: 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 206px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.system-blank {
+  margin-left: 10px;
+}
+
+.system-blank .system-blank-t {
+  width: 120px;
+  height: 206px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.system-blank .system-blank-t .system-blank-t-com {
+  width: 120px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.system-blank .system-blank-b {
+  margin-top: 10px;
+  width: 120px;
+  height: 311px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.system-blank .system-blank-b .system-blank-b-com {
+  width: 120px;
+  height: 175px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.system-blank-l .system-blank-t {
+  width: 120px;
+  height: 206px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.system-blank-l .system-blank-t .system-blank-t-com {
+  width: 120px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.system-blank-l .system-blank-b {
+  margin-top: 10px;
+  width: 120px;
+  height: 311px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.system-blank-l .system-blank-b .system-blank-b-com {
+  width: 120px;
+  height: 175px;
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.slide2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.slide2 .system-list .system-list-big {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1140px;
+}
+
+.slide2 .system-list .system-list-big .item {
+  margin-left: 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 311px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.slide2 .system-list .system-list-small {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1000px;
+}
+
+.slide2 .system-list .system-list-small .item {
+  margin-left: 10px;
+  margin-top: 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 206px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.settings {
+  margin: 20px 0 0 30px;
+}
+
+.settings a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.settings a i {
+  font-size: 0;
+}
+
+.settings a span {
+  margin-left: 8px;
+  font: 18px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #fff;
 }

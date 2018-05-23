@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+	<title></title>
+	<link rel="stylesheet" href="../plugins/swiper/swiper-4.2.0.min.css">
+	<link rel="stylesheet" href="../styles/css/login.css">
+</head>
+<body>
+    <div class="container">
+    	<div class="date">
+    		<div class="l">
+    			<i><img src="../images/system_logo.png" alt=""></i>
+    			<i><img src="../images/system_title.png" alt="单点登录系统"></i>
+    		</div>
+    		<div class="r">
+    			<div class="date-l">
+	    			<i><img src="../images/icon1.png" alt=""></i>
+	    			<div class="time" id="dateNum"></div>
+	    		</div>
+	    		<div class="exit"><img src="../images/icon2.png" alt=""></div>
+    		</div>
+    	</div>
+    	<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide slide1">
+		        	<div class="system-l">
+		        		<div class="user-info"></div>
+			        	<div class="system-list">
+			        		<div class="system-list-big">
+			        			<div class="item"></div>
+			        			<div class="item"></div>
+			        		</div>
+			        		<div class="system-list-small">
+			        			<div class="item"></div>
+			        			<div class="item"></div>
+			        			<div class="item"></div>
+			        		</div>
+			        	</div>
+		        	</div>
+		        	<div class="system-blank">
+		        		<div class="system-blank-t">
+		        			<div class="system-blank-t-com"></div>
+		        		</div>
+		        		<div class="system-blank-b">
+		        			<div class="system-blank-b-com"></div>
+		        		</div>
+		        	</div>
+		    	</div>
+		        <div class="swiper-slide slide2">
+		        	<div class="system-blank-l">
+		        		<div class="system-blank-t">
+		        			<div class="system-blank-t-com"></div>
+		        		</div>
+		        		<div class="system-blank-b">
+		        			<div class="system-blank-b-com"></div>
+		        		</div>
+		        	</div>
+		        	<div class="system-list">
+		        		<div class="system-list-big">
+		        			<div class="item"></div>
+		        			<div class="item"></div>
+		        			<div class="item"></div>
+		        		</div>
+		        		<div class="system-list-small">
+		        			<div class="item"></div>
+		        			<div class="item"></div>
+		        			<div class="item"></div>
+		        			<div class="item"></div>
+		        		</div>
+		        	</div>
+		    	</div>
+		    </div>
+		    <div class="swiper-button-prev system-prev"><i></i></div>
+		    <div class="swiper-button-next system-next"><i></i></div>
+		</div>
+		<div class="settings">
+			<a href="">
+				<i><img src="../images/icon5.png" alt="系统设置"></i>
+				<span>系统设置</span>
+			</a>
+		</div>
+    	<div class="footer">
+    		<div class="line"></div>
+    		<p>©1999 - 2018 雅斯特酒店集团版权所有, Inc or its affiliates. All Rights Reserved. 粤ICP备17011619号</p>
+    	</div>
+	</div>
+	<script src="../plugins/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../plugins/swiper/swiper-4.2.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//登录聚焦
+			$(".login-container .inp input").focus(function(){
+				$(this).parent().addClass("on");
+			});
+			$(".login-container .inp input").blur(function(){
+				$(this).parent().removeClass("on");
+			});
+			//调用当前时间
+			getMyTime();
+		});
+
+		 var mySwiper = new Swiper('.swiper-container',{
+            parallax : true,
+            navigation: {
+			    nextEl: '.swiper-button-next',
+			    prevEl: '.swiper-button-prev',
+		  	},
+   		 })
+		//当前时间方法
+		function getMyTime(){
+            var myDate=new Date();
+            var year=myDate.getFullYear();
+            var month=myDate.getMonth()+1;
+            var day=myDate.getDate();
+            var week=myDate.getDay();
+            var array=['周日','周一','周二','周三','周四','周五','周六',];
+            var hour=myDate.getHours();
+            var minute=myDate.getMinutes();
+            var second=myDate.getSeconds();
+            document.getElementById('dateNum').innerHTML=year+'.'+month+'.'+day+'&nbsp;&nbsp;&nbsp;'+array[week]+'&nbsp;&nbsp;&nbsp;'+p(hour)+':'+p(minute)+':'+p(second);
+            setTimeout('getMyTime()',500);
+        }
+        function p(n){
+            return n<10?'0'+n:n;
+        }
+	</script>
+</html>
